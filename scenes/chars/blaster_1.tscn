@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/blaster_1.glb" type="PackedScene" id=1]
+[ext_resource path="res://scenes/chars/blaster.gd" type="Script" id=2]
+[ext_resource path="res://scenes/chars/bullet_hit.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/chars/blaster_blast.tscn" type="PackedScene" id=4]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.898039, 0.458824, 0.94902, 1 )
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.235294, 0.4, 0.223529, 1 )
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.439216, 0.533333, 0.309804, 1 )
+
+[node name="blaster_1" instance=ExtResource( 1 )]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
+script = ExtResource( 2 )
+bullet_hit = ExtResource( 3 )
+blaster_shot = ExtResource( 4 )
+
+[node name="main" parent="." index="0"]
+material/0 = SubResource( 1 )
+
+[node name="grip001" parent="." index="1"]
+material/0 = SubResource( 2 )
+
+[node name="grip" parent="." index="2"]
+material/0 = SubResource( 3 )
+
+[node name="muzzle" type="Position3D" parent="." index="4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.34103e-07, 0, 2.25295 )
+
+[node name="cooldown_timer" type="Timer" parent="." index="5"]
+
+[node name="shot" type="RayCast" parent="." index="6"]
+enabled = true
+cast_to = Vector3( 0, 0, 100 )
+collision_mask = 15
+
+[node name="muzzle_flash" type="OmniLight" parent="." index="7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.665118 )
+light_color = Color( 0, 0.788235, 1, 1 )
+light_energy = 4.0
+omni_range = 10.4614
+[connection signal="timeout" from="cooldown_timer" to="." method="_on_cooldown_timer_timeout"]

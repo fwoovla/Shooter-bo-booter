@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/crosshair.png" type="Texture" id=1]
+
+[node name="hand" type="Position3D"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.408628, 0.80638, -0.877228 )
+
+[node name="Aim_ray" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0974426, 0, 0 )
+enabled = true
+cast_to = Vector3( 0, 0, -100 )
+collision_mask = 5
+
+[node name="target_pos" type="Position3D" parent="."]
+
+[node name="crosshair" type="Sprite3D" parent="."]
+texture = ExtResource( 1 )

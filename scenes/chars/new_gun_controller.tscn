@@ -1,0 +1,12 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/chars/new_gun_controller.gd" type="Script" id=1]
+[ext_resource path="res://scenes/chars/blaster_1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/chars/rocket_launcher.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/chars/pistol.tscn" type="PackedScene" id=4]
+
+[node name="new_gun_controller" type="Node"]
+script = ExtResource( 1 )
+pistol = ExtResource( 4 )
+blaster = ExtResource( 2 )
+rocket_launcher = ExtResource( 3 )

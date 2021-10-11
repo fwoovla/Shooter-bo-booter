@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scenes/chars/rocket_launcher.gd" type="Script" id=1]
+[ext_resource path="res://assets/rocket_launcher.glb" type="PackedScene" id=2]
+[ext_resource path="res://scenes/chars/Rocket_2.tscn" type="PackedScene" id=3]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.345098, 0.364706, 0.192157, 1 )
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.792157, 0.0352941, 0.0509804, 1 )
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.541176, 0.360784, 0.25098, 1 )
+
+[node name="rocket_launcher" instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, 0 )
+script = ExtResource( 1 )
+rocket = ExtResource( 3 )
+
+[node name="main" parent="." index="0"]
+transform = Transform( 0.221625, 0, 0, 0, 0, -0.221625, 0, 1.26199, 0, -2.81667e-07, 0, 0 )
+material/0 = SubResource( 1 )
+
+[node name="sight" parent="." index="1"]
+transform = Transform( 0.0407803, 0, 0, 0, 0, -0.0407803, 0, 0.0407803, 0, -2.81667e-07, 0, 0 )
+material/0 = SubResource( 2 )
+
+[node name="top" parent="." index="2"]
+transform = Transform( 0.149678, 0, 0, 0, 0.078026, 0, 0, 0, 0.914759, -2.81667e-07, 0, 0 )
+material/0 = SubResource( 3 )
+
+[node name="cooldown_timer" type="Timer" parent="." index="3"]
+
+[node name="Muzzle" type="Position3D" parent="." index="4"]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -5.53295e-07, 0, 1.69805 )
+[connection signal="timeout" from="cooldown_timer" to="." method="_on_cooldown_timer_timeout"]

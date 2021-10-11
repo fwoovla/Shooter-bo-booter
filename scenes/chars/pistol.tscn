@@ -1,0 +1,69 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/chars/pistol.gd" type="Script" id=1]
+[ext_resource path="res://scenes/chars/bullet_hit.tscn" type="PackedScene" id=2]
+
+[sub_resource type="CubeMesh" id=1]
+
+[sub_resource type="Animation" id=2]
+resource_name = "recoil"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("MeshInstance:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 2.20359e-07, 0, -1.09863 ), Vector3( 0, 0, -0.532755 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("MeshInstance:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -14.386, 7.22246e-07, -5.72289e-06 ), Vector3( 0, 0, 0 ) ]
+}
+
+[node name="pistol" type="Spatial"]
+transform = Transform( -0.4, 0, -1.55766e-07, 0, 0.4, 0, 1.55766e-07, 0, -0.4, 0, 0, -1.27151 )
+script = ExtResource( 1 )
+bullet_hit = ExtResource( 2 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 0.202999, 2.75493e-08, 1.55805e-08, -1.96404e-08, 0.275815, 0.317029, 2.47877e-09, -0.0707453, 1.236, 2.20359e-07, 0, -1.09863 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="MeshInstance2" type="MeshInstance" parent="MeshInstance"]
+transform = Transform( 1, -2.84217e-14, 0, 0, 0.504416, 2.4081, 0, -0.192682, 0.313921, 0, -1.94014, -1.02812 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="cooldown_timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="shot" type="RayCast" parent="."]
+enabled = true
+cast_to = Vector3( 0, 0, 200 )
+collision_mask = 7
+
+[node name="muzzle" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1 )
+
+[node name="muzzle_flash" type="OmniLight" parent="."]
+transform = Transform( 2.5, 0, -2.27374e-13, 0, 2.5, 0, 2.27374e-13, 0, 2.5, -2.53393e-07, 0, 0.650702 )
+light_color = Color( 0.819608, 0.337255, 0.0431373, 1 )
+omni_range = 7.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/recoil = SubResource( 2 )
+[connection signal="timeout" from="cooldown_timer" to="." method="_on_cooldown_timer_timeout"]

@@ -1,0 +1,214 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://scenes/chars/health_pack.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/grass.jpg" type="Texture" id=2]
+[ext_resource path="res://scenes/chars/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/scenery/barell.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/walls/wall_1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/chars/ammo_box.tscn" type="PackedScene" id=6]
+[ext_resource path="res://levels/level_1.gd" type="Script" id=7]
+[ext_resource path="res://scenes/chars/Enemy_1_2.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/walls/wall_2.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/walls/low_wall.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/walls/door_wall_1.tscn" type="PackedScene" id=11]
+
+[sub_resource type="Environment" id=2]
+background_mode = 1
+background_color = Color( 0.0901961, 0.0823529, 0.0823529, 1 )
+ambient_light_color = Color( 0.921569, 0.945098, 0.690196, 1 )
+ambient_light_energy = 0.1
+tonemap_exposure = 0.4
+
+[sub_resource type="CubeMesh" id=3]
+size = Vector3( 40, 0.5, 40 )
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="ConvexPolygonShape" id=5]
+points = PoolVector3Array( -20.1372, -0.387931, -20.1379, -20.1372, -0.387931, 20.1379, -20.1372, 0.439655, -20.1379, -20.1372, 0.439655, 20.1379, 20.1379, -0.387931, -20.1379, 20.1379, -0.387931, 20.1379, 20.1379, 0.439655, -20.1379, 20.1379, 0.439655, 20.1379 )
+
+[sub_resource type="CubeMesh" id=6]
+
+[sub_resource type="SpatialMaterial" id=7]
+albedo_color = Color( 0.639216, 0.596078, 0.239216, 1 )
+uv1_scale = Vector3( 20, 5, 5 )
+
+[sub_resource type="ConvexPolygonShape" id=8]
+points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
+
+[sub_resource type="ConcavePolygonShape" id=9]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[sub_resource type="ConcavePolygonShape" id=10]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[sub_resource type="ConvexPolygonShape" id=11]
+points = PoolVector3Array( -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1 )
+
+[sub_resource type="ConcavePolygonShape" id=12]
+data = PoolVector3Array( -1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, 1, 1, -1, -1, 1, -1, 1, -1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1 )
+
+[sub_resource type="CylinderMesh" id=13]
+
+[sub_resource type="SpatialMaterial" id=14]
+albedo_color = Color( 0.341176, 0.419608, 0.847059, 1 )
+
+[node name="test_world" type="Spatial"]
+script = ExtResource( 7 )
+
+[node name="DirectionalLight2" type="DirectionalLight" parent="."]
+transform = Transform( 0.399099, -0.88817, -0.22776, -0.0598377, -0.273099, 0.960123, -0.914953, -0.369556, -0.16214, 5.42258, 28.2837, 4.90702 )
+light_color = Color( 1, 0.945098, 0.494118, 1 )
+light_energy = 0.3
+shadow_enabled = true
+shadow_bias = 0.0
+shadow_contact = 1.0
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 9.42407, 8 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 2 )
+
+[node name="Ground" type="StaticBody" parent="."]
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Ground"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0 )
+layers = 3
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Ground"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0 )
+shape = SubResource( 5 )
+
+[node name="wall" type="StaticBody" parent="."]
+
+[node name="MeshInstance" type="MeshInstance" parent="wall"]
+transform = Transform( 0.811, 0, 3.49691e-06, 0, -7.183, 0, 7.08999e-08, 0, -40, 40.076, 7, 0 )
+mesh = SubResource( 6 )
+material/0 = SubResource( 7 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="wall"]
+transform = Transform( 0.811, 0, 3.49691e-06, 0, -7.183, 0, 7.08999e-08, 0, -40, 40.076, 7, 0 )
+shape = SubResource( 8 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="wall"]
+transform = Transform( 0.811, 0, 3.49691e-06, 0, -7.183, 0, 7.08999e-08, 0, -40, 40.076, 7, 0 )
+shape = SubResource( 9 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="wall"]
+transform = Transform( 3.54499e-08, 0, 40, 0, -7.183, 0, 0.811, 0, -1.74846e-06, -0.923966, 7, -40 )
+mesh = SubResource( 6 )
+material/0 = SubResource( 7 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="wall"]
+transform = Transform( 3.54499e-08, 0, 40, 0, -7.183, 0, 0.811, 0, -1.74846e-06, -0.923966, 7, -40 )
+shape = SubResource( 10 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="wall"]
+transform = Transform( -0.811, 0, 6.64413e-06, 0, -7.183, 0, 1.3471e-07, 0, 40, -39.924, 7, 0 )
+mesh = SubResource( 6 )
+material/0 = SubResource( 7 )
+
+[node name="CollisionShape" type="CollisionShape" parent="wall"]
+transform = Transform( -0.811, 0, 6.64413e-06, 0, -7.183, 0, 1.3471e-07, 0, 40, -39.924, 7, 0 )
+shape = SubResource( 11 )
+
+[node name="MeshInstance4" type="MeshInstance" parent="wall"]
+transform = Transform( 3.54499e-08, 0, 40, 0, -7.183, 0, 0.811, 0, -1.74846e-06, 0.0760345, 7, 40 )
+mesh = SubResource( 6 )
+material/0 = SubResource( 7 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="wall"]
+transform = Transform( 3.54499e-08, 0, 40, 0, -7.183, 0, 0.811, 0, -1.74846e-06, 0.0760345, 7, 40 )
+shape = SubResource( 12 )
+
+[node name="lamp" type="MeshInstance" parent="wall"]
+transform = Transform( 0.5, 0, 0, 0, 1, 0, 0, 0, 0.5, -13.4859, 15.403, -19.1925 )
+mesh = SubResource( 13 )
+material/0 = SubResource( 14 )
+
+[node name="SpotLight" type="SpotLight" parent="wall/lamp"]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 0, 0 )
+light_energy = 2.0
+shadow_enabled = true
+spot_range = 22.0
+
+[node name="lamp2" type="MeshInstance" parent="wall"]
+transform = Transform( 0.5, 0, 0, 0, 1, 0, 0, 0, 0.5, 18.5141, 15.403, -24.1925 )
+mesh = SubResource( 13 )
+material/0 = SubResource( 14 )
+
+[node name="SpotLight" type="SpotLight" parent="wall/lamp2"]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 0, 0 )
+light_energy = 2.0
+shadow_enabled = true
+spot_range = 22.0
+
+[node name="wall_2" parent="wall" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -18.3284 )
+
+[node name="wall_1" parent="wall" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 5, -18.3051 )
+
+[node name="wall_3" parent="wall" instance=ExtResource( 5 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 30, 5, -7.09315 )
+
+[node name="low_wall" parent="wall" instance=ExtResource( 10 )]
+
+[node name="door_wall_1" parent="wall" instance=ExtResource( 11 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -25, 0, -4.13643 )
+
+[node name="Spawn_pos" type="Spatial" parent="."]
+transform = Transform( 0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -26, 12, -16 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 1.91415, 0 )
+speed = 12.0
+gravity = 1.58
+jump_power = 150.0
+min_camera_tilt = -60.0
+max_camera_tilt = 60.0
+
+[node name="Pick_ups" type="Spatial" parent="."]
+
+[node name="ammo_box" parent="Pick_ups" instance=ExtResource( 6 )]
+transform = Transform( 0.281908, 0, -0.102606, 0, 0.3, 0, 0.102606, 0, 0.281908, -33.6839, 1.39406, 20.4917 )
+
+[node name="ammo_box2" parent="Pick_ups" instance=ExtResource( 6 )]
+transform = Transform( 0.281908, 0, -0.102606, 0, 0.3, 0, 0.102606, 0, 0.281908, 7.86771, 1.21645, -31.3177 )
+
+[node name="ammo_box3" parent="Pick_ups" instance=ExtResource( 6 )]
+transform = Transform( 0.281908, 0, -0.102606, 0, 0.3, 0, 0.102606, 0, 0.281908, -1.85416, 1.60924, 18.1796 )
+
+[node name="ammo_box4" parent="Pick_ups" instance=ExtResource( 6 )]
+transform = Transform( 0.281908, 0, -0.102606, 0, 0.3, 0, 0.102606, 0, 0.281908, 26.8003, 0.918563, 10.257 )
+
+[node name="health_pack" parent="Pick_ups" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.33959, -6 )
+
+[node name="Enemies" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 19, 0 )
+
+[node name="Enemy_1_2" parent="Enemies" instance=ExtResource( 8 )]
+transform = Transform( -0.10904, 0, 0.994037, 0, 1, 0, -0.994037, 0, -0.10904, -3.46521, 2.64025, -28.8343 )
+
+[node name="Enemy_1_4" parent="Enemies" instance=ExtResource( 8 )]
+transform = Transform( 0.997875, 0, -0.0651598, 0, 1, 0, 0.0651598, 0, 0.997875, 28.0395, 2.64025, 25.0997 )
+
+[node name="Enemy_1_3" parent="Enemies" instance=ExtResource( 8 )]
+transform = Transform( 0.500937, 0, 0.865484, 0, 1, 0, -0.865484, 0, 0.500937, 16.4609, 2.90274, -16.2411 )
+
+[node name="scenery" type="Spatial" parent="."]
+
+[node name="barell" parent="scenery" instance=ExtResource( 4 )]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -24.4596, 1.5, -10.8908 )
+
+[editable path="wall/wall_2"]
+
+[editable path="wall/low_wall"]
+
+[editable path="wall/door_wall_1"]

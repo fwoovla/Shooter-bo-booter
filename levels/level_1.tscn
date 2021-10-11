@@ -1,0 +1,258 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://scenes/chars/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/walls/Dirt_ground_1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/walls/Stone_floor.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/walls/wall_1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/walls/wall_2.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/walls/door_wall_1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/walls/wall_3.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/chars/Enemy_1_2.tscn" type="PackedScene" id=8]
+[ext_resource path="res://levels/level_1.gd" type="Script" id=9]
+[ext_resource path="res://scenes/walls/Metal_ceiling.tscn" type="PackedScene" id=10]
+
+[sub_resource type="Environment" id=1]
+ambient_light_color = Color( 0.92549, 0.933333, 0.690196, 1 )
+ambient_light_energy = 0.3
+ambient_light_sky_contribution = 0.0
+tonemap_exposure = 0.4
+
+[node name="level_1" type="Spatial"]
+script = ExtResource( 9 )
+
+[node name="map" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -45 )
+
+[node name="floor" type="Spatial" parent="map"]
+
+[node name="Dirt_ground_1" parent="map/floor" instance=ExtResource( 2 )]
+
+[node name="Dirt_ground_2" parent="map/floor" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0 )
+
+[node name="Dirt_ground_3" parent="map/floor" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 10 )
+
+[node name="Dirt_ground_4" parent="map/floor" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10 )
+
+[node name="Dirt_ground_7" parent="map/floor" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 40 )
+
+[node name="Dirt_ground_12" parent="map/floor" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 50 )
+
+[node name="Dirt_ground_13" parent="map/floor" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 50 )
+
+[node name="Dirt_ground_8" parent="map/floor" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 40 )
+
+[node name="Dirt_ground_9" parent="map/floor" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 40 )
+
+[node name="Dirt_ground_10" parent="map/floor" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 50 )
+
+[node name="Dirt_ground_11" parent="map/floor" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 50 )
+
+[node name="Dirt_ground_14" parent="map/floor" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 3, 79 )
+
+[node name="Dirt_ground_15" parent="map/floor" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 3, 80 )
+
+[node name="Dirt_ground_16" parent="map/floor" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 3, 70 )
+
+[node name="Dirt_ground_17" parent="map/floor" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 3, 60 )
+
+[node name="Dirt_ground_18" parent="map/floor" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 3, 80 )
+
+[node name="Dirt_ground_19" parent="map/floor" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 3, 70 )
+
+[node name="Dirt_ground_20" parent="map/floor" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 3, 60 )
+
+[node name="Dirt_ground_21" parent="map/floor" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 3, 80 )
+
+[node name="Dirt_ground_22" parent="map/floor" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 3, 70 )
+
+[node name="Dirt_ground_23" parent="map/floor" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 3, 60 )
+
+[node name="Dirt_ground_24" parent="map/floor" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 80 )
+
+[node name="Dirt_ground_25" parent="map/floor" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 70 )
+
+[node name="Dirt_ground_26" parent="map/floor" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 60 )
+
+[node name="Stone_floor" parent="map/floor" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 17 )
+
+[node name="Stone_floor2" parent="map/floor" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 22 )
+
+[node name="Stone_floor3" parent="map/floor" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 27 )
+
+[node name="Stone_floor4" parent="map/floor" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 32 )
+
+[node name="Stone_floor5" parent="map/floor" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 37 )
+
+[node name="Stone_floor6" parent="map/floor" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 1, 47 )
+
+[node name="Stone_floor7" parent="map/floor" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 1, 52 )
+
+[node name="Stone_floor8" parent="map/floor" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 1, 57 )
+
+[node name="Stone_floor9" parent="map/floor" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 2, 0, 0, 0, 1, 40, 2, 62 )
+
+[node name="Stone_floor10" parent="map/floor" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 2, 0, 0, 0, 1, 40, 3, 67 )
+
+[node name="Stone_floor11" parent="map/floor" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 2, 0, 0, 0, 1, 40, 3, 72 )
+
+[node name="walls" type="Spatial" parent="map"]
+
+[node name="wall_1" parent="map/walls" instance=ExtResource( 4 )]
+transform = Transform( 0.9, 0, 0, 0, 1.1, 0, 0, 0, 1, 5.44925, 5.85252, -6.00815 )
+
+[node name="wall_2" parent="map/walls" instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1.1, 0, 1, 0, -4.37114e-08, -5, 6, 4 )
+
+[node name="wall_3" parent="map/walls" instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1.1, 0, 1, 0, -4.37114e-08, 16, 6, 4.03431 )
+
+[node name="wall_4" parent="map/walls" instance=ExtResource( 4 )]
+transform = Transform( -1, 0, 1.50996e-07, 0, 1.1, 0, -1.50996e-07, 0, -1, 14.9659, 6, 15.7567 )
+
+[node name="wall_7" parent="map/walls" instance=ExtResource( 4 )]
+transform = Transform( 1.94707e-07, 0, 1, 0, 1.1, 0, -1, 0, 1.94707e-07, 46.0173, 6, 54.7667 )
+
+[node name="wall_24" parent="map/walls" instance=ExtResource( 4 )]
+transform = Transform( 1.94707e-07, 0, 1, 0, 1.1, 0, -1, 0, 1.94707e-07, 46.0173, 17, 54.7667 )
+
+[node name="wall_12" parent="map/walls" instance=ExtResource( 4 )]
+transform = Transform( 1.94707e-07, 0, 1, 0, 1.1, 0, -1, 0, 1.94707e-07, 46.0173, 8.9233, 76.0635 )
+
+[node name="wall_25" parent="map/walls" instance=ExtResource( 4 )]
+transform = Transform( 1.94707e-07, 0, 1, 0, 1.1, 0, -1, 0, 1.94707e-07, 46.0173, 19.9233, 76.0635 )
+
+[node name="wall_13" parent="map/walls" instance=ExtResource( 4 )]
+transform = Transform( 1.94707e-07, 0, 1, 0, 1.1, 0, -1, 0, 1.94707e-07, 34.0173, 4.9233, 66.0635 )
+
+[node name="wall_14" parent="map/walls" instance=ExtResource( 4 )]
+transform = Transform( 1.94707e-07, 0, 1, 0, 1.1, 0, -1, 0, 1.94707e-07, 34.0173, 15.9233, 66.0635 )
+
+[node name="wall_5" parent="map/walls" instance=ExtResource( 5 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1.15685, 0, -5.05677e-08, -5, 6, 27 )
+
+[node name="wall_6" parent="map/walls" instance=ExtResource( 5 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1.15685, 0, -5.05677e-08, 5.55896, 6, 27 )
+
+[node name="wall_23" parent="map/walls" instance=ExtResource( 5 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 0.432949, 0, -1.89248e-08, 34.1591, 15.7592, 49.6772 )
+
+[node name="door_wall_1" parent="map/walls" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.545447, 39.257 )
+
+[node name="wall_8" parent="map/walls" instance=ExtResource( 7 )]
+transform = Transform( 1.86268, 0, 0, 0, 1, 0, 0, 0, 1, 15.2869, 5.60615, 55.6005 )
+
+[node name="wall_16" parent="map/walls" instance=ExtResource( 7 )]
+transform = Transform( 1.86268, 0, 0, 0, 1, 0, 0, 0, 1, 15.2869, 15.6062, 55.6005 )
+
+[node name="wall_15" parent="map/walls" instance=ExtResource( 7 )]
+transform = Transform( 1.86268, 0, 0, 0, 1, 0, 0, 0, 1, 25.5595, 7.30359, 84.4639 )
+
+[node name="wall_17" parent="map/walls" instance=ExtResource( 7 )]
+transform = Transform( 1.86268, 0, 0, 0, 1, 0, 0, 0, 1, 25.5595, 17.3036, 84.4639 )
+
+[node name="wall_18" parent="map/walls" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.11011, 7.30359, 84.4639 )
+
+[node name="wall_19" parent="map/walls" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.11011, 17.3036, 84.4639 )
+
+[node name="wall_20" parent="map/walls" instance=ExtResource( 7 )]
+transform = Transform( -6.55671e-08, 0, -1, 0, 1, 0, 1.5, 0, -4.37114e-08, -5.44607, 7.30359, 67.4639 )
+
+[node name="wall_21" parent="map/walls" instance=ExtResource( 7 )]
+transform = Transform( -6.55671e-08, 0, -1, 0, 1, 0, 1.5, 0, -4.37114e-08, -5.44607, 17.3036, 67.4639 )
+
+[node name="wall_11" parent="map/walls" instance=ExtResource( 7 )]
+transform = Transform( 1.05159, 0, 0, 0, 1, 0, 0, 0, 1, 33.9459, 5.60615, 44.0226 )
+
+[node name="wall_22" parent="map/walls" instance=ExtResource( 7 )]
+transform = Transform( 1.05159, 0, 0, 0, 1, 0, 0, 0, 1, 33.9459, 15.6062, 44.0226 )
+
+[node name="wall_9" parent="map/walls" instance=ExtResource( 7 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 21.5479, 5, 35.2732 )
+
+[node name="wall_10" parent="map/walls" instance=ExtResource( 7 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 0.692968, 0, -3.02906e-08, -4.15021, 5.52105, 47.0068 )
+
+[node name="ceiling" type="Spatial" parent="map"]
+
+[node name="Metal_ceiling" parent="map/ceiling" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 11.5462, 1 )
+
+[node name="Metal_ceiling6" parent="map/ceiling" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 38.837, 20.9647, 54.293 )
+
+[node name="Metal_ceiling7" parent="map/ceiling" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 38.837, 20.9647, 74.293 )
+
+[node name="Metal_ceiling8" parent="map/ceiling" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.837, 20.9647, 74.293 )
+
+[node name="Metal_ceiling9" parent="map/ceiling" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.16297, 20.9647, 74.293 )
+
+[node name="Metal_ceiling10" parent="map/ceiling" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.16297, 20.9647, 54.293 )
+
+[node name="Metal_ceiling11" parent="map/ceiling" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.837, 20.9647, 54.293 )
+
+[node name="Metal_ceiling2" parent="map/ceiling" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 11.0825, 21 )
+
+[node name="Metal_ceiling3" parent="map/ceiling" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 10.5608, 41 )
+
+[node name="Metal_ceiling5" parent="map/ceiling" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 10.5378, 44.6713 )
+
+[node name="Metal_ceiling4" parent="map/ceiling" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 11.1244, 44.6318 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.149432, 0, -0.988772, 0, 1, 0, 0.988772, 0, 0.149432, 7.23548, 2.92256, 1.44365 )
+
+[node name="Enemies" type="Spatial" parent="."]
+
+[node name="Enemy_1_2" parent="Enemies" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 5, -43 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 1 )
+
+[editable path="map/walls/door_wall_1"]
